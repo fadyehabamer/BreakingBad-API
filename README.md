@@ -1,2 +1,4 @@
-# ITI Graduation Project August-2021
-> An E-Commerce application Built mainly with **React.js**
+# Breaking Bad API
+> This apps shows all characters of Breaking Bad Show & also search for any character
+<hr>
+### Made with
