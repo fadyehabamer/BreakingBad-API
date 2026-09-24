@@ -1,10 +1,10 @@
 # Breaking Bad API
-> This app shows the main cast of the Breaking Bad show and lets you search for any character or actor.
+> This app shows the main cast of the Breaking Bad show, loaded from the [TVmaze API](https://www.tvmaze.com/api), and lets you search for any character or actor.
 
 Live demo: https://breakingbadapp.vercel.app/
 
 ### Made with
-* Bootstrap 4
+* Bootstrap 5
 * Vanilla JavaScript
 * [TVmaze API](https://www.tvmaze.com/api) (cast of show [169](https://www.tvmaze.com/shows/169/breaking-bad))
 
