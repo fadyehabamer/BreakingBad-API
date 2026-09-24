@@ -27,7 +27,8 @@ header img {
     color: white;
 }
 
-.img-info:hover>.info-display {
+.img-info:hover>.info-display,
+.img-info:focus>.info-display {
     display: block;
 }
 
