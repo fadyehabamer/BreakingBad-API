@@ -12,6 +12,21 @@ header img {
     width: 40px;
 }
 
+.container,
+.row {
+    --bs-gutter-x: 30px;
+}
+
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+.img-info {
+    position: relative;
+}
+
 .img {
     width: 100%;
 }

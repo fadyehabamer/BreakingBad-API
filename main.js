@@ -40,7 +40,7 @@ window.addEventListener("load" , ()=>{
 function loader (){
     output.innerHTML=
     `
-    <div class= "gif-spinner mx-auto" >
+    <div class="gif-spinner col-auto mx-auto">
         <img src="img/loader.webp" alt="">
         <span class="text-white"> Loading...  </span>
     </div>
