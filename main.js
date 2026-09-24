@@ -5,12 +5,34 @@ const CAST_URL = "https://api.tvmaze.com/shows/169/cast";
 
 const inpsearch = document.getElementById("inp-search"),
       output    = document.getElementById("output"),
+      musicToggle = document.getElementById("music-toggle"),
       audio = new Audio("theme.m4a")
 
 let cast = [];
 
+function updateMusicToggle(){
+    const playing = !audio.paused;
+    musicToggle.textContent = playing ? "Pause theme music" : "Play theme music";
+    musicToggle.setAttribute("aria-pressed", String(playing));
+}
+
+function playMusic(){
+    // Browsers block autoplay with sound until the user interacts with the
+    // page, in which case play() rejects; the toggle button stays available.
+    return audio.play().catch(() => {}).finally(updateMusicToggle);
+}
+
+musicToggle.addEventListener("click", ()=>{
+    if(audio.paused){
+        playMusic();
+    }else{
+        audio.pause();
+        updateMusicToggle();
+    }
+})
+
 window.addEventListener("load" , ()=>{
-    audio.play();
+    playMusic();
     loader();
     fetchcharcters();
 } )
