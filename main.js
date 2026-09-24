@@ -30,9 +30,23 @@ inpsearch.addEventListener("change",()=>{
 })
 
 async function fetchcharcters(){
-    const res = await fetch(CAST_URL);
-    cast = await res.json();
-    render(filterCast(inpsearch.value));
+    try{
+        const res = await fetch(CAST_URL);
+        if(!res.ok) throw new Error(`HTTP ${res.status}`);
+        cast = await res.json();
+        render(filterCast(inpsearch.value));
+    }catch(err){
+        console.error(err);
+        showMessage("Couldn't load characters. Please try again later.");
+    }
+}
+
+function showMessage(text){
+    output.innerHTML = "";
+    const p = document.createElement("p");
+    p.className = "col text-white text-center";
+    p.textContent = text;
+    output.appendChild(p);
 }
 
 // Match the search text against both the character and the actor name.
