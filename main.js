@@ -25,7 +25,8 @@ function loader (){
     `
 }
 
-inpsearch.addEventListener("change",()=>{
+// Filtering is local, so update results on every keystroke.
+inpsearch.addEventListener("input",()=>{
     render(filterCast(inpsearch.value));
 })
 
@@ -70,6 +71,11 @@ function createField(tag, label, value){
 // Build cards with DOM APIs / textContent rather than innerHTML so that
 // data from the API is never interpreted as markup.
 function render(results){
+    if(!results.length){
+        showMessage("No characters found.");
+        return;
+    }
+
     output.innerHTML=""
 
     results.forEach(({ person, character }) =>{
