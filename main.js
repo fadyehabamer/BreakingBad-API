@@ -49,6 +49,8 @@ function loader (){
 
 // Filtering is local, so update results on every keystroke.
 inpsearch.addEventListener("input",()=>{
+    // Keep the loading/error message until the cast has actually loaded.
+    if(!cast.length) return;
     render(filterCast(inpsearch.value));
 })
 
