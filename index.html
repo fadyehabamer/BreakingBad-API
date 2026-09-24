@@ -14,14 +14,15 @@
 <body>
     <div class="container">
         <header class="text-center mt-5">
-            <img src="img/bb-logo.png">
+            <img src="img/bb-logo.png" alt="Breaking Bad">
             <div class="mt-3">
                 <button type="button" id="music-toggle" class="btn btn-sm btn-outline-light" aria-pressed="false">Play theme music</button>
             </div>
         </header>
         <div class="row mt-4">
             <div class="col-md-6 mx-auto">
-                <input type="text" id="inp-search" class="form-control" placeholder="Search Characters...">
+                <label for="inp-search" class="sr-only">Search characters by character or actor name</label>
+                <input type="search" id="inp-search" class="form-control" placeholder="Search Characters..." autocomplete="off">
             </div>
         </div>
 

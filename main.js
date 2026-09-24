@@ -41,7 +41,7 @@ function loader (){
     output.innerHTML=
     `
     <div class= "gif-spinner mx-auto" >
-        <img src="img/loader.webp">
+        <img src="img/loader.webp" alt="">
         <span class="text-white"> Loading...  </span>
     </div>
     `
@@ -103,6 +103,8 @@ function render(results){
     results.forEach(({ person, character }) =>{
         const card = document.createElement("div")
         card.classList.add("col-md-3" , "mb-3" , "img-info")
+        // Focusable so keyboard and touch users can reveal the details too.
+        card.tabIndex = 0
 
         const image = character.image || person.image;
         const img = document.createElement("img");
